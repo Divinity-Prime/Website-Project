@@ -1,20 +1,49 @@
 <?php  
 
 // Get All books function
-function get_all_books($con){
-   $sql  = "SELECT * FROM books ORDER bY id DESC";
-   $stmt = $con->prepare($sql);
-   $stmt->execute();
+function get_all_books($con) {
+    $sql  = "SELECT * FROM books ORDER bY id DESC";
+    $stmt = $con->prepare($sql);
+    $stmt->execute();
 
-   if ($stmt->rowCount() > 0) {
-   	  $books = $stmt->fetchAll();
-   }else {
-      $books = 0;
-   }
+    if ($stmt->rowCount() > 0) {
+        $books = $stmt->fetchAll();
+    } else {
+        $books = 0;
+    }
 
-   return $books;
+    return $books;
+}
+
+// Get books by ID function
+function get_book($con, $id) {
+    $sql  = "SELECT * FROM books WHERE id=?";
+    $stmt = $con->prepare($sql);
+    $stmt->execute([$id]);
+
+    if ($stmt->rowCount() > 0) {
+        $book = $stmt->fetch();
+    } else {
+        $book = 0;
+    }
+
+    return $book;
 }
 
 
+// Search books function
+function search_books($con, $key) {
+    // A simple search algorithm process
+    $key = "%{$key}%";
+    $sql  = "SELECT * FROM books WHERE title LIKE ? OR description LIKE ?";
+    $stmt = $con->prepare($sql);
+    $stmt->execute([$key, $key]);
 
+    if ($stmt->rowCount() > 0) {
+        $books = $stmt->fetchAll();
+    } else {
+        $books = 0;
+    }
 
+    return $books;
+}
