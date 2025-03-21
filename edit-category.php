@@ -1,11 +1,11 @@
 <?php  
 session_start();
 
-# If the admin is logged in
+//  If the admin is logged in
 if (isset($_SESSION['user_id']) &&
     isset($_SESSION['user_email'])) {
     
-    # If category ID is not set
+    // If category ID is not set
     if (!isset($_GET['id'])) {
         #Redirect to admin.php page
         header("Location: admin.php");
@@ -14,16 +14,16 @@ if (isset($_SESSION['user_id']) &&
 
     $id = $_GET['id'];
 
-    # Database Connection File
+    // Database Connection File
     include "db_conn.php";
 
-    # Category helper function
+    //  Category helper function
     include "php/func-category.php";
     $category = get_category($conn, $id);
     
-    # If the ID is invalid
+    //  If the ID is invalid
     if ($category == 0) {
-        #Redirect to admin.php page
+        // Redirect to admin.php page
         header("Location: admin.php");
         exit;
     }

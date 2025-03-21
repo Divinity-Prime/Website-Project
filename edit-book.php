@@ -1,11 +1,11 @@
 <?php  
 session_start();
 
-# If the admin is logged in
+//  If the admin is logged in
 if (isset($_SESSION['user_id']) &&
     isset($_SESSION['user_email'])) {
 
-	# If book ID is not set
+	//  If book ID is not set
 	if (!isset($_GET['id'])) {
 		#Redirect to admin.php page
         header("Location: admin.php");
@@ -14,25 +14,25 @@ if (isset($_SESSION['user_id']) &&
 
 	$id = $_GET['id'];
 
-	# Database Connection File
+	//  Database Connection File
 	include "db_conn.php";
 
-	# Book helper function
+	//  Book helper function
 	include "php/func-book.php";
     $book = get_book($conn, $id);
     
-    # If the ID is invalid
+    //  If the ID is invalid
     if ($book == 0) {
     	#Redirect to admin.php page
         header("Location: admin.php");
         exit;
     }
 
-    # Category helper function
+    //  Category helper function
 	include "php/func-category.php";
     $categories = get_all_categories($conn);
 
-    # author helper function
+    //  author helper function
 	include "php/func-author.php";
     $authors = get_all_author($conn);
 

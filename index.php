@@ -134,10 +134,10 @@ $categories = get_all_categories($conn);
                         // do nothing
                     } else { ?> -->
                         <a href="#" class="list-group-item list-group-item-action active">Author</a>
-                        <!-- <?php foreach ($authors as $author) { ?> -->
-                            <!-- <a href="author.php?id=<?=$author['id']?>" class="list-group-item list-group-item-action">
+                        <?php foreach ($authors as $author) { ?> 
+                             <a href="author.php?id=<?=$author['id']?>" class="list-group-item list-group-item-action">
                                 <?=$author['name']?>
-                            </a> -->
+                            </a>
                         <?php } ?>
                     <?php } ?>
                 </div>
