@@ -10,3 +10,45 @@
 .nd {
   text-decoration: none;
 }
+
+/* Centering all sections */
+.about-section {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Fixing alignment for the last three sections */
+.centered-section {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Ensuring icon boxes align properly */
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Icon size */
+.icon-box i {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* Fix uneven spacing */
+.equal-height-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .equal-height-row {
+    flex-direction: column;
+  }
+}
