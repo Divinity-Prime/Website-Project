@@ -65,11 +65,10 @@
             <div class="card shadow-sm p-4 flex-fill">
                 <h2><i class="bi bi-book text-success"></i> What We Offer</h2>
                 <ul class="list-unstyled">
-                    <li>📚 Thousands of novels across various genres.</li>
+                    <li>📚 Multiple novels across various genres.</li>
                     <li>🖥️ Online reading in an easy-to-use reader.</li>
                     <li>📥 Offline downloads for anytime access.</li>
                     <li>✍️ Support for independent authors.</li>
-                    <li>🎯 Personalized book recommendations.</li>
                 </ul>
             </div>
         </div>
